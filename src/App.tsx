@@ -1,6 +1,6 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CompetitionsList from './Pages/CompetitionsList/CompetitionsList'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider, createHashRouter } from 'react-router-dom';
 import { CssBaseline } from '@mui/material';
 import Layout from './Components/Layout';
 import Competition from './Pages/Competition/Competition';
@@ -12,7 +12,7 @@ const darkTheme = createTheme({
 });
 
 const App = () => {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <Layout />,
