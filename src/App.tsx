@@ -2,6 +2,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CompetitionsList from './Pages/CompetitionsList/CompetitionsList'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { CssBaseline } from '@mui/material';
+import Layout from './Components/Layout';
+import Competition from './Pages/Competition/Competition';
 
 const darkTheme = createTheme({
   palette: {
@@ -13,7 +15,17 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <CompetitionsList />,
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <CompetitionsList />,
+        },
+        {
+          path: "/competitions/:id",
+          element: <Competition />
+        }
+      ],
     }
   ]);
 
