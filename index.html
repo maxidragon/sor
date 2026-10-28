@@ -2,13 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/sor/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOR</title>
-    <script type="module" crossorigin src="/sor/assets/index-DpUDuAzV.js"></script>
-    <link rel="stylesheet" crossorigin href="/sor/assets/index-BDBx6C_I.css">
+    <meta name="robots" content="noindex" />
+    <title>Moved to Competition Stats</title>
+    <script>
+      // The sum of ranks now lives in Competition Stats. Old links point at
+      // #/competitions/<id>; send them to that competition's Sum of ranks tab,
+      // and everything else to the search page.
+      (function () {
+        var target = "https://maxidragon.github.io/competition-stats/";
+        var match = location.hash.match(/^#\/competitions\/([^/?#]+)/);
+        if (match) target += "#/competition/" + match[1] + "/sor";
+        location.replace(target);
+      })();
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <p>
+      This app moved to
+      <a href="https://maxidragon.github.io/competition-stats/">Competition Stats</a>.
+    </p>
   </body>
 </html>
